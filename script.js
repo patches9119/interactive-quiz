@@ -1,4 +1,5 @@
 const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
 const questionContainerEl = document.getElementById('question-container');
 const questionEl = document.getElementById('question');
 const answerButtonsEl = document.getElementById('answer-buttons');
@@ -7,14 +8,24 @@ const scoreEl = document.getElementById('score-container');
 let shuffledQuestions, currentQuestionIndex;
 
 //questions for the quiz
-const questions = [
-    {
+const questions = [{
         question: 'What is 2+2?',
-        answers: [
-            {text: '4', correct: true},
-            {text: '22', correct: false},
-            {text: '8', correct: false},
-            {text: 'apple', correct: false}
+        answers: [{
+                text: '4',
+                correct: true
+            },
+            {
+                text: '22',
+                correct: false
+            },
+            {
+                text: '8',
+                correct: false
+            },
+            {
+                text: 'apple',
+                correct: false
+            }
         ]
     }
 
@@ -33,14 +44,30 @@ function startGame() {
 };
 
 function setNextQuestion() {
+    resetQuestions();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 
 };
 
 function showQuestion(question) {
     questionEl.innerText = question.question;
+    question.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
+        button.addEventListener('click', selectAnswer());
+        answerButtonsEl.appendChild(button);
+    })
 
-}
+};
+
+function resetQuestions() {
+    nextButton.classList.add('hide');
+    while (answerButtonsEl.firstChild) {
+        answerButtonsEl.removeChild(answerButtonsEl.firstChild);
+    }
+
+};
 
 function selectAnswer() {
 
