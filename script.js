@@ -11,41 +11,41 @@ let currentScore = 0;
 
 //questions for the quiz
 const questions = [{
-        question: 'What is 2+2?',
+        question: 'What is not a function in the Math Class?',
         answers: [{
-                text: '4',
+                text: 'Minus',
                 correct: true
             },
             {
-                text: '22',
+                text: 'Random',
                 correct: false
             },
             {
-                text: '8',
+                text: 'Round',
                 correct: false
             },
             {
-                text: 'apple',
+                text: 'Max',
                 correct: false
             }
         ]
     },
     {
-        question: 'What color is a red apple?',
+        question: 'How do you comment out a line in javascript?',
         answers: [{
-                text: 'Red',
+                text: '//',
                 correct: true
             },
             {
-                text: 'Blue',
+                text: '/clear',
                 correct: false
             },
             {
-                text: 'Egg',
+                text: '/comment',
                 correct: false
             },
             {
-                text: 'Purple',
+                text: '**',
                 correct: false
             }
         ]
@@ -71,21 +71,21 @@ const questions = [{
         ]
     },
     {
-        question: 'What is 4 * 2?',
+        question: 'What filetype is a README file typically?',
         answers: [{
-                text: '6',
+                text: "js",
                 correct: false
             },
             {
-                text: '8',
+                text: 'md',
                 correct: true
             },
             {
-                text: '24',
+                text: 'css',
                 correct: false
             },
             {
-                text: '2',
+                text: 'html',
                 correct: false
             }
         ]
